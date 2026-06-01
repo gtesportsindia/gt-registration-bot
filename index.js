@@ -53,6 +53,10 @@ client.once("clientReady", async () => {
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
 
+  if (message.content === "/hello") {
+  return message.reply("HELLO TEST");
+  }
+
   if (message.content === "/resetslots") {
 
   if (!message.member.permissions.has("Administrator")) {
