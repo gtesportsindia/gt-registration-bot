@@ -54,22 +54,21 @@ client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
 
   if (message.content === "/hello") {
-  return message.reply("HELLO TEST");
+  await message.reply("HELLO TEST");
+  return;
   }
 
   if (message.content === "/resetslots") {
-
-  if (!message.member.permissions.has("Administrator")) {
-    return message.reply("❌ Only Admin can use this command.");
-  }
+if (message.content === "/resetslots") {
 
   slots = [];
   saveSlots();
 
   await updateSlotChannel();
 
-  return message.reply("✅ All 24 slots have been reset successfully.");
-  }
+  await message.reply("✅ All 24 slots have been reset successfully.");
+  return;
+}
 
   if (message.channel.id !== REGISTRATION_CHANNEL_ID) return;
 
